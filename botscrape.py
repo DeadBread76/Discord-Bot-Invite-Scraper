@@ -1,12 +1,12 @@
 import requests
-import dhooks
+#import dhooks
 
 
 counter = 0
 permcode = '&scope=bot&permissions=8'
 pool = []
 auth = 'https://discordapp.com/oauth2/authorize?client_id='
-hook = dhooks.Webhook('DISCORD_WEBHOOK_HERE')
+#hook = dhooks.Webhook('DISCORD_WEBHOOK_HERE')
 
 def removeduplicate():
     lines_seen = set()
