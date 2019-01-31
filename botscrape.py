@@ -1,11 +1,11 @@
 import requests
-#import dhooks
+import dhooks
 
 
 counter = 0
-permcode = '&scope=bot&permissions=8'
 pool = []
 auth = 'https://discordapp.com/oauth2/authorize?client_id='
+permcode = '&scope=bot&permissions=66321471'
 #hook = dhooks.Webhook('DISCORD_WEBHOOK_HERE')
 
 def removeduplicate():
@@ -20,7 +20,7 @@ def removeduplicate():
 while True:
     counter += 1
     src = requests.get('https://divinediscordbots.com/list/top?page='+str(counter)).text
-    links = src.split('<a href="https://discordapp.com/oauth2/authorize?client_id=')
+    links = src.split('<a href="/bots/')
     for link in links:
         if 'https://discordapp.com/' in link:
             boturl = requests.get(auth+link)
@@ -34,5 +34,5 @@ while True:
             #hook.send (url) #enable if you want to send links through webhook
             with open('botlinks.txt','a') as handle:
                 handle.write(url+'\n')
-                removeduplicate()
+                #removeduplicate() #enable if you are getting a lot of duplicate links.
 
