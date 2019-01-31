@@ -1,5 +1,5 @@
 import requests
-import dhooks
+#import dhooks
 
 
 counter = 0
